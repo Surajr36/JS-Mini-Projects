@@ -70,3 +70,41 @@
 // console.log(tips);
 // console.log(bills);
 // console.log(total);
+
+// const mark = { fullName: "Mark Miller", mass: 78, d: 1.69 };
+// const john = { fullName: "John Smith", mass: 92, d: 1.95 };
+
+// // console.log(mark.d );
+
+// function calcBmi(person) {
+//   return person.mass / person.d ** 2;
+// }
+// // console.log(calcBmi(mark));
+// const markBmi = calcBmi(mark);
+// const johnBmi = calcBmi(john);
+
+// if (johnBmi > markBmi)
+//   console.log(
+//     `${john.fullName}'s BMI (${johnBmi}) is higher than ${mark.fullName}'s (${markBmi})`
+//   );
+// else
+//   console.log(
+//     `${mark.fullName}'s BMI (${markBmi}) is higher than ${john.fullName}'s (${johnBmi})`
+//   );
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+
+// for (i = 0; i < bills.length; i++) {
+//   if (bills[i] > 50 && bills[i] < 300) tips[i] = 0.15 * bills[i];
+//   else tips[i] = 0.2 * bills[i];
+//   totals[i] = bills[i] + tips[i];
+// }
+
+const Arr = [12, 5, -5, 0, 4];
+function printForecast(Arr) {
+  for (let i = 0; i < Arr.length; i++)
+    console.log(`...${Arr[i]}*C in ${i + 1} days`);
+}
+printForecast(Arr);
