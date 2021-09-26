@@ -110,3 +110,83 @@ const game = {
     team2: 6.5,
   },
 };
+// const players1 = game.players[0];
+// const players2 = game.players[1];
+// const [team1gk, ...fieldPlayers1] = players1;
+// const [team2gk, ...fieldPlayers2] = players2;
+// const allPlayers = [...players1, ...players2];
+// const players1final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+// const { team1, x: draw, team2 } = game.odds;
+// // console.log(team1, draw, team2);
+// const printGoals = function (...players) {
+//   // console.log(players, players.length);
+// };
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals(...game.scored);
+
+// // console.log(`Goal ${i + 1}: ${el}`);
+
+// for (const [i, el] of game.scored.entries()) var oddavg = 0;
+// for (const [keys, values] of Object.entries(game.odds)) {
+//   oddavg += values;
+//   // console.log(`Odds of victory of $`);
+// }
+
+// oddavg /= 3;
+// // console.log(oddavg);
+// const scorers = {};
+// for (const player of game.scored) {
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+// // console.log(scorers);
+
+// const orders = new Set(['Dosa', 'Dosa', 'Idly', 'Pasta', 'Idly', 'Pasta']);
+// // console.log(orders.has('Chapati'));
+// orders.add('Chapati');
+// orders.add('Chapati');
+// // console.log(orders.size);
+// // console.log(orders.has('Chapati'));
+// // console.log(orders);
+
+// let rest = new Map();
+
+// rest
+//   .set('categories', restaurant.categories)
+//   .set('open', 11)
+//   .set('close', 20)
+//   .set(true, "We're open boss")
+//   .set(false, 'Closed bruhh');
+
+// const time = 13;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+const uniqueEvent = [...new Set(gameEvents.values())];
+console.log(uniqueEvent);
+const events = [...gameEvents];
+// console.log(events);
+
+gameEvents.delete(64);
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+// for (let ele of events) {
+//   if (ele[0] <= 45) console.log("It's in the first half");
+//   else console.log("It's in the second half");
+// }
+
+let name = 'Suraj Ragu';
+console.log(name.slice(-4));
