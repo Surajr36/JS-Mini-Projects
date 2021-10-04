@@ -24,6 +24,14 @@
 //     id.scrollIntoView({ behavior: 'smooth' });
 //   });
 // });
+
+//Sticky nav
+//OLD WAY
+// const initialCoOrds = section1.getBoundingClientRect();
+// window.addEventListener('scroll', function () {
+//   if (window.scrollY > initialCoOrds.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// });
 ///////////////////////////////////////
 // Modal window
 
@@ -112,17 +120,94 @@ nav.addEventListener('mouseout', function (e) {
 });
 
 //Sticky nav
-//OLD WAY
-const initialCoOrds = section1.getBoundingClientRect();
-window.addEventListener('scroll', function () {
-  if (window.scrollY > initialCoOrds.top) nav.classList.add('sticky');
-  else nav.classList.remove('sticky');
-});
 
 //USING INTERSECTION OBSERVER API
-const obsCallback = function () {};
-const observeOptions = {
-  root: null,
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  // console.log(entry);
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
 };
-const observer = new IntersectionObserver();
-observer.observe(section1);
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0, //When 0% of threshold is visible, we want the navigation to get sticky
+  rootMargin: `-${navHeight}px`, //rootmargin is used and a box of x pixels is added outside of our target element
+});
+headerObserver.observe(header);
+
+//IMPLEMENTING ELEMENT REVEAL ON SCROLL
+const allSections = document.querySelectorAll('.section');
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return; //GUARD CLASS
+  entry.target.classList.remove('section--hidden');
+  // section.classList.remove('section--hidden');
+  observer.unobserve(entry.target); //To make sure none of the section is being
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  // section.classList.add('section--hidden');
+});
+
+//Lazy loading of images. Impacts how site works
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.src = entry.target.dataset.src;
+  // entry.target.classList.remove('lazy-img');
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img');
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: '200px',
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
+
+//Implementing slider
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+let curSlide = 0;
+const maxSlide = slides.length;
+
+const goToSlide = function (slide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+  );
+};
+goToSlide(0);
+const nextSlide = function () {
+  if (curSlide === maxSlide - 1) curSlide = 0;
+  else curSlide++;
+  goToSlide(curSlide);
+};
+const prevSlide = function () {
+  if (curSlide === 0) curSlide = maxSlide - 1;
+  else curSlide--;
+  goToSlide(curSlide);
+};
+
+btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide);
