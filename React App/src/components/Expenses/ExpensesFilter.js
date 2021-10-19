@@ -4,11 +4,7 @@ import React from "react";
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  // const [enteredYear, setEnteredYear] = useState(" ");
-
   const yearChangeHandler = (event) => {
-    // setEnteredYear(event.target.value);
-    // console.log(event.target.value);
     props.onSaveFilterData(event.target.value);
   };
 
