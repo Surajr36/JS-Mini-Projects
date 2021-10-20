@@ -3,9 +3,9 @@ import { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
-  const [enteredTitle, setEnteredTitle] = useState(" ");
-  const [enteredAmount, setEnteredAmount] = useState(" ");
-  const [enteredDate, setEnteredDate] = useState(" ");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -31,6 +31,7 @@ const ExpenseForm = (props) => {
     setEnteredAmount(" ");
     setEnteredDate(" ");
   };
+
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -65,6 +66,9 @@ const ExpenseForm = (props) => {
       </div>
       <div className=".new-expense__actions">
         <button type="submit">Add Expense</button>
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
       </div>
     </form>
   );
