@@ -87,7 +87,9 @@ function displayAlert(text, action) {
   }, 3000);
 }
 // ****** LOCAL STORAGE **********
-function addToLocalStorage(id, value) {}
+function addToLocalStorage(id, value) {
+  const grocery = { id: id, value: value };
+}
 function removeFromLocalStorage(id) {}
 function editLocalStorage(id, value) {}
 // ****** SETUP ITEMS **********
