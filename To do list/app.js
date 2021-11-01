@@ -88,7 +88,7 @@ function displayAlert(text, action) {
 }
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
-  const grocery = { id: id, value: value };
+  const grocery = { id, value };
 }
 function removeFromLocalStorage(id) {}
 function editLocalStorage(id, value) {}
