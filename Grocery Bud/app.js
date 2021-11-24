@@ -22,13 +22,16 @@ function addItem(e) {
   const id = new Date().getTime().toString();
   // console.log(id);
   if (value && !editFlag) {
+    displayAlert("Item added successfully", "success");
   } else if (value && editFlag) {
+    displayAlert("Item edited successfully", "success");
   } else {
+    displayAlert("Empty value", "danger");
   }
 }
 function displayAlert(text, action) {
   alert.textContent = text;
-  alert.classList.add("alert-danger");
+  alert.classList.add(`alert-${action}`);
 }
 // ****** LOCAL STORAGE **********
 
