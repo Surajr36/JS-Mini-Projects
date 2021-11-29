@@ -32,6 +32,8 @@ function addItem(e) {
 function displayAlert(text, action) {
   alert.textContent = text;
   alert.classList.add(`alert-${action}`);
+
+  setTimeout(function () {}, 2000);
 }
 // ****** LOCAL STORAGE **********
 
