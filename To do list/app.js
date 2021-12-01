@@ -36,7 +36,7 @@ function displayAlert(text, action) {
   setTimeout(function () {
     alert.textContent = "";
     alert.classList.remove(`alert-${action}`);
-  }, 2000);
+  }, 3000);
 }
 // ****** LOCAL STORAGE **********
 
