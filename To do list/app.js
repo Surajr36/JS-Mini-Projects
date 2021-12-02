@@ -22,6 +22,10 @@ function addItem(e) {
   const id = new Date().getTime().toString();
   // console.log(id);
   if (value && !editFlag) {
+    const element = document.createElement("article");
+    element.classList.add("grocery-item");
+    //Adding id
+
     displayAlert("Item added successfully", "success");
   } else if (value && editFlag) {
     displayAlert("Item edited successfully", "success");
