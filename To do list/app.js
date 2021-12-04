@@ -26,6 +26,9 @@ function addItem(e) {
     element.classList.add("grocery-item");
     //Adding id
     const attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
+    element.innerHTML = ``;
 
     displayAlert("Item added successfully", "success");
   } else if (value && editFlag) {
