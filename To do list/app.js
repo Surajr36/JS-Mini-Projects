@@ -28,7 +28,7 @@ function addItem(e) {
     const attr = document.createAttribute("data-id");
     attr.value = id;
     element.setAttributeNode(attr);
-    element.innerHTML = `<p class="title">Item</p>
+    element.innerHTML = `<p class="title">${value}</p>
                         <div class="btn-container">
                         <button type="button" class="edit-btn">
                           <i class="fas fa-edit"></i>
@@ -37,7 +37,9 @@ function addItem(e) {
                           <i class="fas fa-trash"></i>
                         </button>
                         </div>`;
+    list.appendChild(element);
     displayAlert("Item added successfully", "success");
+    groceryContainer.classList.add("show-container");
   } else if (value && editFlag) {
     displayAlert("Item edited successfully", "success");
   } else {
