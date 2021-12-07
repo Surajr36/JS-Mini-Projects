@@ -40,6 +40,10 @@ function addItem(e) {
     list.appendChild(element);
     displayAlert("Item added successfully", "success");
     groceryContainer.classList.add("show-container");
+    //Placeholders
+    addToLocalStorage(id, value);
+    //Set back to default
+    setBackToDefault();
   } else if (value && editFlag) {
     displayAlert("Item edited successfully", "success");
   } else {
@@ -56,5 +60,13 @@ function displayAlert(text, action) {
   }, 3000);
 }
 // ****** LOCAL STORAGE **********
-
+function addToLocalStorage(id, value) {}
 // ****** SETUP ITEMS **********
+
+//SETTING BACK TO DEFAULT
+function setBackToDefault() {
+  grocery.value = "";
+  editFlag = false;
+  editId = "";
+  submitBtn.textContent = "submit";
+}
