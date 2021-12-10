@@ -39,6 +39,12 @@ function addItem(e) {
                           <i class="fas fa-trash"></i>
                         </button>
                         </div>`;
+
+    const deleteBtn = element.querySelector(".delete-btn");
+    const editBtn = element.querySelector(".edit-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
+
     list.appendChild(element);
     displayAlert("Item added successfully", "success");
     groceryContainer.classList.add("show-container");
