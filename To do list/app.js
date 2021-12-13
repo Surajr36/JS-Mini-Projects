@@ -92,3 +92,5 @@ function setBackToDefault() {
   editId = "";
   submitBtn.textContent = "submit";
 }
+function deleteItem() {}
+function editItem() {}
