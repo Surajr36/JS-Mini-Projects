@@ -92,5 +92,9 @@ function setBackToDefault() {
   editId = "";
   submitBtn.textContent = "submit";
 }
-function deleteItem(e) {}
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  // console.log(element);
+  list.removeChild(element);
+}
 function editItem() {}
