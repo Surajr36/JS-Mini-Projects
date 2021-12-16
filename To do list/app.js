@@ -96,5 +96,12 @@ function deleteItem(e) {
   const element = e.currentTarget.parentElement.parentElement;
   // console.log(element);
   list.removeChild(element);
+
+  if (list.children.length === 0) {
+    groceryContainer.classList.remove("show-container");
+  }
+
+  displayAlert("Item removed", "danger");
+  setBackToDefault();
 }
 function editItem() {}
