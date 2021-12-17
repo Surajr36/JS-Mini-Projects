@@ -83,6 +83,7 @@ function displayAlert(text, action) {
 }
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {}
+function removeFromLocalStorage(id) {}
 // ****** SETUP ITEMS **********
 
 //SETTING BACK TO DEFAULT
@@ -94,6 +95,7 @@ function setBackToDefault() {
 }
 function deleteItem(e) {
   const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
   // console.log(element);
   list.removeChild(element);
 
@@ -103,5 +105,10 @@ function deleteItem(e) {
 
   displayAlert("Item removed", "danger");
   setBackToDefault();
+
+  //Remove from local storage
+  removeFromLocalStorage(id);
 }
-function editItem() {}
+function editItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+}
