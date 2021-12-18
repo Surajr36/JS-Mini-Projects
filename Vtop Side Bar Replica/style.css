@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+.logo {
+  background-color: aqua;
+}
+.home-btn {
+  background-color: transparent; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+}
