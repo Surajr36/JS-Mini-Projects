@@ -110,5 +110,7 @@ function deleteItem(e) {
   removeFromLocalStorage(id);
 }
 function editItem(e) {
-  const element = e.currentTarget.parentElement.parentElement;
+  const element = (e.currentTarget.parentElement.editElement =
+    e.currentTarget.parentElement.previousElementSibling);
+  console.log(editElement);
 }
