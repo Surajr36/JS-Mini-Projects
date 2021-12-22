@@ -114,4 +114,5 @@ function editItem(e) {
   editElement = e.currentTarget.parentElement.previousElementSibling;
   // console.log(editElement);
   grocery.value = editElement.innerHTML;
+  editFlag = true;
 }
