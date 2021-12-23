@@ -115,4 +115,5 @@ function editItem(e) {
   // console.log(editElement);
   grocery.value = editElement.innerHTML;
   editFlag = true;
+  editId = element.dataset.id;
 }
