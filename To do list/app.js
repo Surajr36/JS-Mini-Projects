@@ -116,4 +116,6 @@ function editItem(e) {
   grocery.value = editElement.innerHTML;
   editFlag = true;
   editId = element.dataset.id;
+
+  submitBtn.textContent = "Edit";
 }
