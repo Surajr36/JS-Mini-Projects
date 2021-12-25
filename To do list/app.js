@@ -53,7 +53,7 @@ function addItem(e) {
     //Set back to default
     setBackToDefault();
   } else if (value && editFlag) {
-    displayAlert("Item edited successfully", "success");
+    // displayAlert("Item edited successfully", "success");
   } else {
     displayAlert("Empty value", "danger");
   }
