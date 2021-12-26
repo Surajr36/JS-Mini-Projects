@@ -55,6 +55,7 @@ function addItem(e) {
   } else if (value && editFlag) {
     editElement.innerHTML = value;
     displayAlert("Item edited successfully", "success");
+    setBackToDefault();
   } else {
     displayAlert("Empty value", "danger");
   }
@@ -87,13 +88,6 @@ function addToLocalStorage(id, value) {}
 function removeFromLocalStorage(id) {}
 // ****** SETUP ITEMS **********
 
-//SETTING BACK TO DEFAULT
-function setBackToDefault() {
-  grocery.value = "";
-  editFlag = false;
-  editId = "";
-  submitBtn.textContent = "submit";
-}
 function deleteItem(e) {
   const element = e.currentTarget.parentElement.parentElement;
   const id = element.dataset.id;
@@ -119,4 +113,11 @@ function editItem(e) {
   editId = element.dataset.id;
 
   submitBtn.textContent = "Edit";
+}
+//SETTING BACK TO DEFAULT
+function setBackToDefault() {
+  grocery.value = "";
+  editFlag = false;
+  editId = "";
+  submitBtn.textContent = "submit";
 }
