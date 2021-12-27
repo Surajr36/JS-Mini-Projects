@@ -55,6 +55,8 @@ function addItem(e) {
   } else if (value && editFlag) {
     editElement.innerHTML = value;
     displayAlert("Item edited successfully", "success");
+    //
+    // editLocalStorage(editId, value);
     setBackToDefault();
   } else {
     displayAlert("Empty value", "danger");
@@ -71,7 +73,7 @@ function clearItems() {
   }
   groceryContainer.classList.remove("show-container");
   displayAlert("All Items Removed", "danger");
-  //
+
   setBackToDefault();
 }
 
