@@ -71,6 +71,7 @@ function clearItems() {
   }
   groceryContainer.classList.remove("show-container");
   displayAlert("All Items Removed", "danger");
+  //
   setBackToDefault();
 }
 
