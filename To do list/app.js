@@ -89,6 +89,7 @@ function displayAlert(text, action) {
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {}
 function removeFromLocalStorage(id) {}
+function editLocalStorage(id, value) {}
 // ****** SETUP ITEMS **********
 
 function deleteItem(e) {
