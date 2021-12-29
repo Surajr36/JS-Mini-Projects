@@ -89,7 +89,9 @@ function displayAlert(text, action) {
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
   const grocery = { id, value };
-  let items = localStorage.getItem("list");
+  let items = localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
   console.log(items);
 }
 function removeFromLocalStorage(id) {}
