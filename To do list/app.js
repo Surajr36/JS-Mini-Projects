@@ -75,7 +75,8 @@ function clearItems() {
   displayAlert("All Items Removed", "danger");
 
   setBackToDefault();
-  removeFromLocalStorage(id);
+  // removeFromLocalStorage(id);
+  localStorage.removeItem("list");
 }
 
 function displayAlert(text, action) {
