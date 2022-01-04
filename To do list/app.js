@@ -56,7 +56,7 @@ function addItem(e) {
     editElement.innerHTML = value;
     displayAlert("Item edited successfully", "success");
     //
-    // editLocalStorage(editId, value);
+    editLocalStorage(editId, value);
     setBackToDefault();
   } else {
     displayAlert("Empty value", "danger");
