@@ -7,9 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/df75eb3152.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link href="styles.css" rel="stylesheet" />
     <script src="script.js" defer></script>
     <title>Calc App</title>
@@ -17,26 +22,29 @@
   <body>
     <div class="calculator-grid">
       <div class="output">
-        <div class="previous"></div>
-        <div class="current"></div>
+        <div class="previous" data-previous=""></div>
+        <div class="current" data-current></div>
       </div>
-      <button class="span-two">AC</button>
-      <button>DEL</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>*</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>-</button>
-      <button>.</button>
-      <button>0</button>
-      <button class="span-two">=</button>
+      <button data-allclear class="span-two">AC</button>
+      <button data-delete="">DEL</button>
+      <button data-operation><i class="fas fa-divide"></i></button>
+      <button data-number>1</button>
+      <button data-number>2</button>
+      <button data-number>3</button>
+      <button data-operation><i class="fas fa-star-of-life"></i></button>
+      <button data-number>4</button>
+      <button data-number>5</button>
+      <button data-number>6</button>
+      <button data-operation><i class="fas fa-plus"></i></button>
+      <button data-number>7</button>
+      <button data-number>8</button>
+      <button data-number>9</button>
+      <button data-operation><i class="fas fa-minus"></i></button>
+      <button data-number>.</button>
+      <button data-number>0</button>
+      <button data-equals class="span-two">
+        <i class="fas fa-equals"></i>
+      </button>
     </div>
   </body>
 </html>

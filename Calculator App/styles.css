@@ -3,5 +3,67 @@
 *::after {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  font-weight: 700;
+  font-weight: 900;
+}
+html {
+  font-size: 10px;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #b92b27; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #1565c0,
+    #b92b27
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #1565c0,
+    #b92b27
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 10rem);
+  grid-template-rows: minmax(12rem, auto) repeat(5, 10rem);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1/-1;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 1.5rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous {
+  color: rgba(15, 15, 15, 0.5);
+  font-size: 2rem;
+}
+.output .current {
+  color: rgba(15, 15, 15, 0.8);
+  font-size: 4rem;
 }
